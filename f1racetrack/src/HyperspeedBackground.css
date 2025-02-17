@@ -1,0 +1,57 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;  /* Impede o scroll */
+  width: 100%;
+}
+
+.hyperspeed-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;    /* Garantir que ocupe toda a largura da janela */
+  height: 100vh;   /* Garantir que ocupe toda a altura da janela */
+  z-index: -1;
+  overflow: hidden;
+  background: #000;
+}
+
+.hyperspeed-lines {
+  position: absolute;
+  width: 200%;  /* Garantir que o padrão se repita adequadamente */
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 5%,
+    #ff0000 5%,
+    #ff0000 10%
+  );
+  animation: speedEffect 1s linear infinite;
+  opacity: 0.1;
+}
+
+.hyperspeed-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.1) 0%, rgba(0, 0, 0, 1) 70%);
+}
+
+@keyframes speedEffect {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+#lights {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
