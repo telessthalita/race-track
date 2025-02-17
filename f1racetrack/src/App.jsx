@@ -1,17 +1,27 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Hyperspeed from './components/Hyperspeed'
+import Header from './components/Header'
 import Home from './pages/Home'
 import Live from './pages/Live'
-import './App.css'
+import './index.css'
 
-export default function App() {
+function App() {
   return (
     <Router>
-      <Hyperspeed />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/live" element={<Live />} />
-      </Routes>
+      <div className="app-container">
+        {/* Cabeçalho Fixo */}
+        <Header className="header" />
+        
+        <main className="content">
+          <div className="container">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/live" element={<Live />} />
+            </Routes>
+          </div>
+        </main>
+      </div>
     </Router>
   )
 }
+
+export default App
