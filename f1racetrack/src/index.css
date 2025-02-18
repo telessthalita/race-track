@@ -526,32 +526,92 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #f5f5f5;
+  min-height: 100vh; 
+  overflow: hidden;
+  position: relative;
 }
 
-.loading-spinner {
-  width: 50px;
-  height: 50px;
-  border: 5px solid #e0e0e0;
+.track {
+  width: 200px;
+  height: 200px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
-  border-top-color: #3f51b5;
-  animation: spin 1s linear infinite;
-  margin-bottom: 20px;
+  position: relative;
+  animation: rotate 2s linear infinite;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.skid-marks {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #ffffff;
+  border-right-color: #ffffff;
+  animation: skid 1.5s ease-in-out infinite;
+}
+
+.f1-car {
+  width: 40px;
+  height: 20px;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg);
+  clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
+  animation: car-tilt 0.8s ease-in-out infinite alternate;
+}
+
+.f1-car::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  width: 8px;
+  height: 10px;
+  background: #1a1a1a;
+  transform: translateX(-50%);
+}
+
+.f1-car::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: -8px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 0 8px 10px;
+  border-color: transparent transparent transparent #ffffff;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes skid {
+  0% { transform: rotate(0deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: rotate(360deg); opacity: 0; }
+}
+
+@keyframes car-tilt {
+  from { transform: translateX(-50%) rotate(85deg); }
+  to { transform: translateX(-50%) rotate(95deg); }
 }
 
 .loading-container p {
-  color: #333;
-  font-size: 1.2rem;
-  font-family: Arial, sans-serif;
-  margin-top: 10px;
+  color: white;
+  font-family: 'Arial Black', sans-serif;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: text-pulse 1s ease-in-out infinite;
+}
+
+@keyframes text-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
 }
