@@ -1,6 +1,6 @@
-# F1 Live Stats
+# F1 Race Track
 
-F1 Live Stats é uma aplicação em React que consome dados da Ergast API para fornecer informações detalhadas sobre a Fórmula 1, como resultados de corridas em tempo real, pilotos, equipes, e estatísticas históricas. A aplicação oferece uma interface responsiva e dinâmica, permitindo que os usuários acompanhem a temporada e explorem dados históricos de corridas.
+F1 Race Track é uma aplicação em React que consome dados da Ergast API para fornecer informações detalhadas sobre a Fórmula 1, como resultados de corridas em tempo real, pilotos, equipes, e estatísticas históricas. A aplicação oferece uma interface responsiva e dinâmica, permitindo que os usuários acompanhem a temporada e explorem dados históricos de corridas.
 
 ## Funcionalidades
 
