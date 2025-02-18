@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Home from './pages/Home'
 import Live from './pages/Live'
+import Drivers from './pages/Drivers'
 import './index.css'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/live" element={<Live />} />
+              <Route path="/drivers" element={<Drivers />} />
             </Routes>
           </div>
         </main>

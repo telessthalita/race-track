@@ -1,0 +1,135 @@
+.drivers-page {
+  padding: 2rem 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.search-bar {
+  margin: 2rem 0;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  border: 2px solid var(--f1-red);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--f1-white);
+  font-size: 1rem;
+}
+
+.drivers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.driver-card {
+  background: rgba(21, 21, 30, 0.8);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 24, 1, 0.3);
+  transition: all 0.3s ease;
+}
+
+.driver-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(255, 24, 1, 0.1);
+}
+
+.driver-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.driver-number {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--f1-red);
+}
+
+.nationality-flag {
+  font-size: 2rem;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.driver-name {
+  color: var(--f1-white);
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.driver-team {
+  color: var(--f1-silver);
+  font-size: 0.9rem;
+}
+
+.driver-actions {
+  margin-top: 1.5rem;
+}
+
+.detail-button {
+  display: block;
+  text-align: center;
+  background: var(--f1-red);
+  color: var(--f1-white);
+  padding: 0.8rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.detail-button:hover {
+  background: #ff2e1a;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .drivers-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Adicione estas regras */
+.team-info {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+  }
+  
+  .team-logo {
+    height: 30px;
+    width: auto;
+  }
+  
+  .team-name {
+    color: var(--f1-silver);
+    font-size: 0.9rem;
+  }
+  
+  .driver-name strong {
+    color: var(--f1-red);
+  }
+  
+  /* Melhore a responsividade */
+  @media (max-width: 480px) {
+    .driver-card {
+      padding: 1rem;
+    }
+    
+    .team-info {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
