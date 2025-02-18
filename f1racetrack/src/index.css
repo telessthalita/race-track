@@ -500,7 +500,7 @@ button:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Mantém atrás de todo conteúdo */
+  z-index: -1; 
   background: linear-gradient(
     to bottom,
     var(--f1-black) 0%,
@@ -509,14 +509,49 @@ button:hover {
   overflow: hidden;
 }
 
-/* Adicione se estiver usando o efeito de linhas */
+
 .hyperspeed-lines {
   position: absolute;
-  height: 200%; /* Dobra a altura para efeito de scroll */
+  height: 200%;
   animation: speedEffect 20s linear infinite;
 }
 
 @keyframes speedEffect {
   from { transform: translateY(-50%); }
   to { transform: translateY(0); }
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #e0e0e0;
+  border-radius: 50%;
+  border-top-color: #3f51b5;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-container p {
+  color: #333;
+  font-size: 1.2rem;
+  font-family: Arial, sans-serif;
+  margin-top: 10px;
 }
